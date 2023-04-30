@@ -1,6 +1,6 @@
-#Include <stdio.h
+#Include<stdio.h>
 /**
- * main A great program has two lines
+ * main - Entry point:
  *
  * Return: Always 0 (Success)
  */
