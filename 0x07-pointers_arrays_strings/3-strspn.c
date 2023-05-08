@@ -1,33 +1,30 @@
 #include "main.h"
 
 /**
- * _strspn - Entry point
- * @s: input
- * @accept: input
- * Return: Always 0 (Success)
+ * _strspn - gets the length of a prefix substring.
+ * @s: Initial segment
+ * @accept: The prefix to be measured.
+ * Return: Returns the number of bytes in the initial segment
+ * of s which consist only of bytes from accept
  */
 unsigned int _strspn(char *s, char *accept)
-
-char *_memcpy(char *dest, char *src, unsigned int n)
 {
-        unsigned int i, n. value, check;
-		
-		value = 0;
-		
-		for (i = 0; s[i] != '\n'; i++)
+	unsigned int bytes = 0;
+	int index;
+
+	while (*s)
+	{
+		for (index = 0; accept[index]; index++)
 		{
-		        check = 0;
-				
-				for (n = 0; accept[n] != '\0'; n++)
-				{
-				        if (accept[n] == s[i])
-					{
-					        value++;
-						check = 1;
-					}
-				}
-				
-				if (check == 0)
-		
+			if (*s == accept[index])
+			{
+				bytes++;
+				break;
+			}
+			else if (accept[index + 1] == '\0')
+				return (bytes);
 		}
+		s++;
+	}
+	return (bytes);
 }
